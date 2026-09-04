@@ -308,7 +308,8 @@ class ContaBancaria:
         if self.saldo >= valor:
             self.saldo -= valor
             return True
-        return False
+        else:
+            return False
 
 def exemplo_conta_bancaria():
     conta = ContaBancaria("José Bonifacio", 500.00)
