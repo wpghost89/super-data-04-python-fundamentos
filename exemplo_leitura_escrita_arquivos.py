@@ -21,6 +21,7 @@
 
 from pathlib import Path
 from datetime import date
+from typing import Union
 
 def criar_arquivo_txt():
     # encoding =
@@ -136,7 +137,7 @@ def calcular_media_missoes(missoes: list[Missao]) -> float:
 
     media: float = soma / len(missoes)
     return media
-
+# ctrl + . = Importar UNION
 def descobrir_maior_quantidadde_missoes(missoes: list[Missao]) -> Union[int, str]:
     maior_quantidade = 0
     personagem_maior_quantidade = ""
