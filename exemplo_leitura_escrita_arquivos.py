@@ -137,7 +137,7 @@ def calcular_media_missoes(missoes: list[Missao]) -> float:
 
     media: float = soma / len(missoes)
     return media
-# ctrl + . = Importar UNION
+                                                                # ctrl + . = Importar UNION
 def descobrir_maior_quantidadde_missoes(missoes: list[Missao]) -> Union[int, str]:
     maior_quantidade = 0
     personagem_maior_quantidade = ""
