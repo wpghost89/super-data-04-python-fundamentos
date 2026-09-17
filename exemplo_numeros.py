@@ -20,13 +20,53 @@ def ler_arquivo_numeros_txt():
     print("Conteudo do arquivo 'numeros.txt':")
     print(conteudo)
 
-# Ex. 3: Criar função `somar_numeros` para apresentar a somar dos números armazenados (ler arquivo)
-
+# Ex. 3: Criar função `somar_numeros` para apresentar a soma dos números armazenados (ler arquivo)
+def somar_numeros():
+    with open("numeros.txt", "r", encoding="utf-8") as arquivo:
+        # strip(): Remove a quebra de linha (\n) de cada elemento antes de converter para número com int()
+        numeros = [int(linha.strip()) for linha in arquivo if linha.strip()]
+   
+    soma = sum(numeros)
+    print(f"Soma dos números: {soma}")
+    return soma
 
 # Ex. 4: Criar função `calcular_media` para apresentar calcular a média dos números armazenados (ler arquivo)
+def calcular_media():
+    with open("numeros.txt", "r", encoding="utf-8") as arquivo:
+        numeros = [int(linha.strip()) for linha in arquivo if linha.strip()]
+    
+    if numeros:
+        media = sum(numeros) / len(numeros)
+        print(f"Média dos números: {media:.2f}")
+        return media
+    else:
+        print("O arquivo está vazio.")
+        return 0
+    
 # Ex. 5: Criar função `descobrir_menor_numero` para apresentar o menor número armazenado (ler arquivo)
-# Ex. 5: Criar função `descobrir_maior_numero` para apresentar o maior número armazenado (ler arquivo)
-
+def descobrir_menor_numero():
+    with open("numeros.txt", "r", encoding="utf-8") as arquivo:
+        numeros = [int(linha.strip()) for linha in arquivo if linha.strip()]
+    
+    if numeros:
+        menor = min(numeros)
+        print(f"Menor número: {menor}")
+        return menor
+    
+# Ex. 6: Criar função `descobrir_maior_numero` para apresentar o maior número armazenado (ler arquivo)
+def descobrir_maior_numero():
+    with open("numeros.txt", "r", encoding="utf-8") as arquivo:
+        numeros = [int(linha.strip()) for linha in arquivo if linha.strip()]
+    
+    if numeros:
+        maior = max(numeros)
+        print(f"Maior número: {maior}")
+        return maior
 
 if __name__ == "__main__":
+    escrever_arquivo_numeros_txt()
     ler_arquivo_numeros_txt()
+    somar_numeros()
+    calcular_media()
+    descobrir_menor_numero()
+    descobrir_maior_numero()
